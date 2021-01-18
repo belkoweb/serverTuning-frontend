@@ -12,6 +12,12 @@ export class AdminService {
       "Content-Type": "application/json; charset=UTF-8",
     });
   }
+  libraryCacheHitRatio() {
+    let array = this.http.get("http://localhost:7700/tuning/libraryCache/", {
+      headers: this.headers,
+    });
+    return array;
+  }
   findAllLibraryCache(): Observable<any> {
     return this.http.get("http://localhost:7700/tuning/libraryCache/", {
       headers: this.headers,

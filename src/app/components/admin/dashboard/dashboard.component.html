@@ -1,34 +1,36 @@
 <div class="container custom-container">
   <div class="card-deck">
     <div class="card" style="width: 18rem;">
-      <div class="custom-brand"><span class="glyphicon glyphicon-user"></span></div>
+      <div class="custom-brand"><span
+          class="libraryCacheHitRatioValue">{{libraryCacheHitRatioValue|number:'1.0'}}</span>%</div>
       <div class="card-body">
-        <h5 class="card-title">Blocks</h5>
-        <p class="card-text">Nombre de Blocks <strong>10</strong>.</p>
-        <a href="/user-list" class="btn btn-custom-link">En Savoir Plus...</a>
+        <h5 class="card-title">Library cache hitratio</h5>
+        <mat-progress-bar mode="determinate" value="libraryCacheHitRatioValue"></mat-progress-bar>
       </div>
     </div>
 
     <div class="card" style="width: 18rem;">
-      <div class="custom-brand"><span class="glyphicon glyphicon-qrcode"></span></div>
+      <div class="custom-brand"><span
+          class="libraryCacheHitRatioValue">{{dictionaryCacheHitRatioValue|number:'1.0'}}</span>%
+      </div>
       <div class="card-body">
-        <h5 class="card-title">Waiters</h5>
-        <p class="card-text">Nombre de Waiters <strong>5</strong>.</p>
-        <a href="/product-list" class="btn  btn-custom-link">En Savoir Plus...</a>
+        <h5 class="card-title">Dictionary Cache hitratio</h5>
+        <mat-progress-bar mode="determinate" value="dictionaryCacheHitRatioValue"></mat-progress-bar>
       </div>
     </div>
 
 
     <div class="card" style="width: 18rem;">
-      <div class="custom-brand"><span class="glyphicon glyphicon-usd"></span></div>
+      <div class="custom-brand"><span
+          class="libraryCacheHitRatioValue">{{redoLogBufferHitRatioValue|number:'1.0'}}</span>%
+      </div>
       <div class="card-body">
-        <h5 class="card-title">Contentions</h5>
-        <p class="card-text">Nombre de Contentions <strong>56</strong>.</p>
-        <a href="/orders" class="btn  btn-custom-link">En Savoir Plus...</a>
+        <h5 class="card-title">Redo log buffer hit ratio</h5>
+        <mat-progress-bar mode="determinate" value="redoLogBufferHitRatioValue"></mat-progress-bar>
       </div>
     </div>
   </div>
-<div style="margin-top: 20px;">
-  <canvas id="myChart"></canvas>
-</div>
+  <div style="margin-top: 20px;">
+    <canvas id="myChart"></canvas>
+  </div>
 </div>

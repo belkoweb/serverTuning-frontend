@@ -3,39 +3,43 @@ table {
 }
 
 .custom-container {
-  margin-left: 100px;
+  margin-left: 60px;
   margin-top: 60px;
-  width: calc(100% - 100px);
+  width: calc(100% - 20px);
 }
-
-.custom-btn-link{
+.libraryCacheHitRatioValue {
+  font-size: 20px;
+  font-weight: 500;
+  color: green;
+}
+.custom-btn-link {
   margin-left: 5px;
   color: #fff;
 }
 
-.custom-btn-link .glyphicon{
+.custom-btn-link .glyphicon {
   color: #fff;
 }
 
-.custom-mat-cell{
+.custom-mat-cell {
   width: 120px;
 }
 
-.custom-brand{
+.custom-brand {
   width: 100%;
   align-content: center;
   text-align: center;
   padding: 10px;
 }
 
-.custom-brand .glyphicon{
+.custom-brand .glyphicon {
   font-size: 60px;
   color: #0b0514;
 }
 
-.btn-custom-link{
-    color: #fff!important;
-    display: block;
-    background: #00c4cc;
-    margin-bottom: 5px;
+.btn-custom-link {
+  color: #fff !important;
+  display: block;
+  background: #00c4cc;
+  margin-bottom: 5px;
 }

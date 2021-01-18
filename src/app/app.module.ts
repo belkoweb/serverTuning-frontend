@@ -1,37 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
-import { AdminTemplateComponent } from './components/template/admin-template/admin-template.component';
-import { NotFoundComponent } from './components/error/not-found/not-found.component';
-import { UnathorizedComponent } from './components/error/unathorized/unathorized.component';
-import { DatePipe } from '@angular/common';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { DashboardComponent } from "./components/admin/dashboard/dashboard.component";
+import { AdminTemplateComponent } from "./components/template/admin-template/admin-template.component";
+import { NotFoundComponent } from "./components/error/not-found/not-found.component";
+import { UnathorizedComponent } from "./components/error/unathorized/unathorized.component";
+import { DatePipe } from "@angular/common";
 import { NgxSpinnerModule } from "ngx-spinner";
 import {
-  MatButtonModule, MatCardModule,
-  MatInputModule, MatListModule,
-  MatToolbarModule, MatSelectModule,
-  MatFormFieldModule, MatTableModule,
-  MatPaginatorModule, MatSortModule,
-  MatProgressBarModule, MatIconModule
-} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatListModule,
+  MatToolbarModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatProgressBarModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+} from "@angular/material";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import {MatDialogModule} from "@angular/material/dialog";
-import {ToastrModule} from "ngx-toastr";
-import { StatistiqueComponent } from './components/admin/statistique/statistique.component';
-import { LatchComponent } from './components/admin/latch/latch.component';
-import { DictionaryCacheComponent } from './components/admin/dictionary-cache/dictionary-cache.component';
-import { LibraryCacheComponent } from './components/admin/library-cache/library-cache.component';
-import { RedoLogBufferComponent } from './components/admin/redo-log-buffer/redo-log-buffer.component';
-import { SystemEventComponent } from './components/admin/system-event/system-event.component';
-import { FileStatComponent } from './components/admin/file-stat/file-stat.component';
-import { LogFileComponent } from './components/admin/log-file/log-file.component';
-
+import { MatDialogModule } from "@angular/material/dialog";
+import { ToastrModule } from "ngx-toastr";
+import { StatistiqueComponent } from "./components/admin/statistique/statistique.component";
+import { LatchComponent } from "./components/admin/latch/latch.component";
+import { DictionaryCacheComponent } from "./components/admin/dictionary-cache/dictionary-cache.component";
+import { LibraryCacheComponent } from "./components/admin/library-cache/library-cache.component";
+import { RedoLogBufferComponent } from "./components/admin/redo-log-buffer/redo-log-buffer.component";
+import { SystemEventComponent } from "./components/admin/system-event/system-event.component";
+import { FileStatComponent } from "./components/admin/file-stat/file-stat.component";
+import { LogFileComponent } from "./components/admin/log-file/log-file.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +53,7 @@ import { LogFileComponent } from './components/admin/log-file/log-file.component
     RedoLogBufferComponent,
     SystemEventComponent,
     FileStatComponent,
-    LogFileComponent
+    LogFileComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,8 @@ import { LogFileComponent } from './components/admin/log-file/log-file.component
     MatToolbarModule,
     MatSelectModule,
     MatFormFieldModule,
-     NgxSpinnerModule,
+    NgxSpinnerModule,
+    MatProgressSpinnerModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -70,10 +77,10 @@ import { LogFileComponent } from './components/admin/log-file/log-file.component
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
