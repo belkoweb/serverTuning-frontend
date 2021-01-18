@@ -30,22 +30,22 @@
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="EVENT_ID">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>EVENT_ID</th>
-            <td mat-cell *matCellDef="let element">{{element.EVENT_ID}}</td>
+            <td mat-cell *matCellDef="let element">{{element.event_ID}}</td>
           </ng-container>
 
           <ng-container matColumnDef="EVENT">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>EVENT</th>
-            <td mat-cell *matCellDef="let element">{{element.EVENT}}</td>
+            <td mat-cell *matCellDef="let element">{{element.event}}</td>
           </ng-container>
 
           <ng-container matColumnDef="TIME_WAITED">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>TIME_WAITED</th>
-            <td mat-cell *matCellDef="let element" >{{element.TIME_WAITED}}</td>
+            <td mat-cell *matCellDef="let element">{{element.time_WAITED}}</td>
           </ng-container>
 
           <ng-container matColumnDef="TOTAL_WAITS">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>TOTAL_WAITS</th>
-            <td mat-cell *matCellDef="let element" >{{element.TOTAL_WAITS}}</td>
+            <td mat-cell *matCellDef="let element">{{element.total_WAITS}}</td>
           </ng-container>
 
 
@@ -57,5 +57,3 @@
     </div>
   </div>
 </div>
-
-

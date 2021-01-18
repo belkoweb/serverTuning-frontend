@@ -1,20 +1,19 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatSort} from "@angular/material/sort";
-import {AdminService} from "../../../services/admin.service";
-import {LogFile} from "../../../model/log-file";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatTableDataSource } from "@angular/material/table";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { AdminService } from "../../../services/admin.service";
+import { LogFile } from "../../../model/log-file";
 
 @Component({
-  selector: 'app-log-file',
-  templateUrl: './log-file.component.html',
-  styleUrls: ['./log-file.component.css']
+  selector: "app-log-file",
+  templateUrl: "./log-file.component.html",
+  styleUrls: ["./log-file.component.css"],
 })
 export class LogFileComponent implements OnInit {
-
   logFiles: Array<LogFile>;
   dataSource: MatTableDataSource<LogFile> = new MatTableDataSource();
-  displayedColumns: string[] = ['group_id', 'type', 'member'];
+  displayedColumns: string[] = ["group_id", "type", "member"];
 
   errorMessage: string;
   infoMessage: string;
@@ -25,17 +24,16 @@ export class LogFileComponent implements OnInit {
     this.findAllLogFile();
   }
 
-  ngOnInit() {
-  }
-  ngAfterViewInit(){
+  ngOnInit() {}
+  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  findAllLogFile(){
-    this.adminService.findAllLogFile().subscribe(data => {
-      //this.logFiles = data;
-      //this.dataSource.data = data;
+  findAllLogFile() {
+    this.adminService.findAllLogFile().subscribe((data) => {
+      this.logFiles = data;
+      this.dataSource.data = data;
       console.log(data);
     });
   }
@@ -44,6 +42,4 @@ export class LogFileComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 }

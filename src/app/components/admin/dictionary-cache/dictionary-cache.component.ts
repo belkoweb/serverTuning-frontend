@@ -1,20 +1,19 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatSort} from "@angular/material/sort";
-import {AdminService} from "../../../services/admin.service";
-import {DictionaryCache} from "../../../model/dictionary-cache";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatTableDataSource } from "@angular/material/table";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort } from "@angular/material/sort";
+import { AdminService } from "../../../services/admin.service";
+import { DictionaryCache } from "../../../model/dictionary-cache";
 
 @Component({
-  selector: 'app-dictionary-cache',
-  templateUrl: './dictionary-cache.component.html',
-  styleUrls: ['./dictionary-cache.component.css']
+  selector: "app-dictionary-cache",
+  templateUrl: "./dictionary-cache.component.html",
+  styleUrls: ["./dictionary-cache.component.css"],
 })
 export class DictionaryCacheComponent implements OnInit {
-
   DictionaryCaches: Array<DictionaryCache>;
   dataSource: MatTableDataSource<DictionaryCache> = new MatTableDataSource();
-  displayedColumns: string[] = ['GETMISSES', 'GETS'];
+  displayedColumns: string[] = ["GETMISSES", "GETS"];
 
   errorMessage: string;
   infoMessage: string;
@@ -25,18 +24,17 @@ export class DictionaryCacheComponent implements OnInit {
     this.findAllDictionaryCache();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  findAllDictionaryCache(){
-    this.adminService.findAllDictionaryCache().subscribe(data => {
-      //this.DictionaryCaches = data;
-      //this.dataSource.data = data;
+  findAllDictionaryCache() {
+    this.adminService.findAllDictionaryCache().subscribe((data) => {
+      this.DictionaryCaches = data;
+      this.dataSource.data = data;
       console.log(data);
     });
   }
@@ -45,6 +43,4 @@ export class DictionaryCacheComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 }
