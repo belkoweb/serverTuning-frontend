@@ -1,0 +1,73 @@
+<div class="container custom-container">
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <strong>Erreur!</strong> {{errorMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="alert alert-success" *ngIf="infoMessage">
+    <strong>Succès!</strong> {{infoMessage}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div *ngIf="dataSource">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col col-xs-6">
+            <h3 class="panel-title">Library Caches</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <mat-form-field>
+          <mat-label>Chercher</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. lait">
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="GETS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>GETS</th>
+            <td mat-cell *matCellDef="let element">{{element.GETS}}</td>
+          </ng-container>
+          <ng-container matColumnDef="GETHITS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>GETHITS</th>
+            <td mat-cell *matCellDef="let element">{{element.GETHITS}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="GETHITRATIO">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>GETHITRATIO</th>
+            <td mat-cell *matCellDef="let element">{{element.GETHITRATIO}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="PINS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>PINS</th>
+            <td mat-cell *matCellDef="let element">{{element.PINS}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="PINHITS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>PINHITS</th>
+            <td mat-cell *matCellDef="let element">{{element.PINHITS}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="PINHITRATIO">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>PINHITRATIO</th>
+            <td mat-cell *matCellDef="let element">{{element.PINHITRATIO}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="RELOADS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>RELOADS</th>
+            <td mat-cell *matCellDef="let element">{{element.RELOADS}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
+
+
