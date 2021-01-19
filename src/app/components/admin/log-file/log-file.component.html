@@ -1,4 +1,5 @@
-<div class="container custom-container">
+<div class="container ">
+  <img src="../../../../assets/imgs/logo-oracle-2.jpg" width="100%" height="400px" class="img shadow">
   <div class="alert alert-danger" *ngIf="errorMessage">
     <strong>Erreur!</strong> {{errorMessage}}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -40,7 +41,7 @@
 
           <ng-container matColumnDef="member">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>MENBER</th>
-            <td mat-cell *matCellDef="let element" >{{element.member}}</td>
+            <td mat-cell *matCellDef="let element">{{element.member}}</td>
           </ng-container>
 
 
@@ -53,5 +54,3 @@
     </div>
   </div>
 </div>
-
-
